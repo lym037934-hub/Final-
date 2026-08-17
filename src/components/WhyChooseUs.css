@@ -1,0 +1,165 @@
+/* =========================================
+   WhyChooseUs Section
+   ========================================= */
+
+/* ---------- Theme Variables ---------- */
+/* Light mode (default) */
+.why-choose-us {
+  --wcu-bg: #f8fafc;
+  --wcu-card-bg: #ffffff;
+  --wcu-text: #0f172a;
+  --wcu-muted-text: #64748b;
+  --wcu-border: rgba(15, 23, 42, 0.1);
+  --wcu-icon-bg: rgba(37, 99, 235, 0.1);
+  --wcu-icon-border: rgba(56, 189, 248, 0.35);
+  --wcu-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --wcu-shadow-hover: 0 12px 24px rgba(15, 23, 42, 0.15);
+}
+
+/* Dark mode override (applied when .dark is on <html> or <body>) */
+.dark .why-choose-us {
+  --wcu-bg: #0f172a;
+  --wcu-card-bg: #1e293b;
+  --wcu-text: #f8fafc;
+  --wcu-muted-text: #94a3b8;
+  --wcu-border: rgba(148, 163, 184, 0.15);
+  --wcu-icon-bg: rgba(37, 99, 235, 0.15);
+  --wcu-icon-border: rgba(56, 189, 248, 0.3);
+  --wcu-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --wcu-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.why-choose-us {
+  background-color: var(--wcu-bg);
+  padding: 80px 24px;
+  color: var(--wcu-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.why-choose-us__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.why-choose-us__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px auto;
+}
+
+.why-choose-us__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--wcu-text);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.why-choose-us__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--wcu-muted-text);
+  margin: 0;
+}
+
+/* ---------- Cards Layout (Flexbox only) ---------- */
+
+.why-choose-us__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Desktop: single row, no wrap */
+  gap: 24px;
+  align-items: stretch; /* Equal height cards */
+}
+
+/* ---------- Card ---------- */
+
+.why-choose-us__card {
+  flex: 1; /* Equal width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--wcu-card-bg);
+  border: 1px solid var(--wcu-border);
+  border-radius: 14px; /* Rounded corners */
+  padding: 40px 24px;
+  box-shadow: var(--wcu-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.why-choose-us__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--wcu-shadow-hover);
+}
+
+/* ---------- Icon ---------- */
+
+.why-choose-us__icon-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%; /* Circular icon container */
+  background-color: var(--wcu-icon-bg);
+  border: 1px solid var(--wcu-icon-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.why-choose-us__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* ---------- Card Text ---------- */
+
+.why-choose-us__card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--wcu-text);
+  margin: 0 0 12px 0;
+}
+
+.why-choose-us__card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--wcu-muted-text);
+  margin: 0;
+}
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+/* Tablet: two cards per row */
+@media (max-width: 992px) {
+  .why-choose-us__grid {
+    flex-wrap: wrap;
+  }
+
+  .why-choose-us__card {
+    flex: 1 1 calc(50% - 12px); /* Two per row, accounting for gap */
+  }
+}
+
+/* Mobile: one card per row */
+@media (max-width: 576px) {
+  .why-choose-us {
+    padding: 56px 16px;
+  }
+
+  .why-choose-us__title {
+    font-size: 1.75rem;
+  }
+
+  .why-choose-us__grid {
+    flex-wrap: wrap;
+  }
+
+  .why-choose-us__card {
+    flex: 1 1 100%; /* One per row */
+  }
+}
