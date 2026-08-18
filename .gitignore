@@ -14,8 +14,7 @@ dist-ssr
 pc-store.json
 set-admin.js
 checkRole.js
-AuthContext.jsx
-useAdminStatus.js
+
 
 
 # Editor directories and files
